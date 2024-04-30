@@ -37,20 +37,52 @@ function setPosition(position) {
 	);
 }
 
+iconLut = {
+	"skc": 		"01",
+	"few": 		"02",
+	"sct": 		"02",
+	"bkn": 		"04",
+	"ovc": 		"04",
+	"fg":  		"04",
+	"shra": 	"10",
+	"hi_shwrs": "10",
+	"fzrara": 	"10",
+	"ra1": 		"10",
+	"ra": 		"10",
+	"tsra":		"11",
+	"hi_tsra":	"11",
+
+	"ip":		"13",
+	"mix":		"13",
+	"raip":		"13",
+	"rasn":		"13",
+	"sn":		"13",
+
+	"wind":		"50",
+	"smoke":	"50",
+	"nsvrtsra":	"50",
+	"dust":		"50",
+	"mist":		"50",
+}
+
 function getWeather(latitude, longitude) {
-	let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=${CONFIG.language}&appid=${key}`;
+	let api = `https://api.weather.gov/points/${latitude},${longitude}`
 	fetch(api)
-		.then(function(response) {
-			let data = response.json();
-			return data;
-		})
-		.then(function(data) {
-			let celsius = Math.floor(data.main.temp - KELVIN);
-			weather.temperature.value = tempUnit == 'C' ? celsius : (celsius * 9) / 5 + 32;
-			weather.description = data.weather[0].description;
-			weather.iconId = data.weather[0].icon;
-		})
-		.then(function() {
+		.then( res => res.json())
+		.then( data => fetch(data.properties.forecast))
+		.then( res => res.json())
+		.then( data => {
+			let period = data.properties.periods[0];
+			let fahrenheit = period.temperature;
+
+			weather.temperature.value = tempUnit == 'C' ? (fahrenheit - 32) * 5 / 9 : fahrenheit;
+			weather.description = period.shortForecast
+			
+			let iconSplit = String(period.icon).replace("https://api.weather.gov/icons/land/", "").split('/')
+			let dayNight = iconSplit[0] == "day" ? "d" : "n"
+			let iconName = iconSplit[1].split('?')[0].split(".")[0]
+			weather.iconId = iconLut[iconName] + dayNight;
+
 			displayWeather();
 		});
 }
