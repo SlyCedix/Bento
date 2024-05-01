@@ -342,6 +342,7 @@ body {
   font-family: inherit;
   font-weight: inherit;
   text-align:center;
+  color: var(--fg);
 }
 
 /* M E D I A - Q U E R I E S */

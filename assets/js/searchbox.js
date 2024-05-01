@@ -13,6 +13,7 @@ function generateSearchBox() {
     searchInput.id = "searchInput"
     searchInput.type = "search";
     searchInput.name = "q";
+    searchInput.autocomplete = "off";
     searchForm.appendChild(searchInput);
 
     searchInput.focus();
