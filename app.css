@@ -326,6 +326,24 @@ body {
   color: var(--sfg);
 }
 
+#searchInput {
+  border: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  padding: 12px;
+  transition: 0.5s;
+  border-radius: 2px;
+  background-color: inherit;
+  color: inherit;
+  font-size: 2rem;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align:center;
+}
+
 /* M E D I A - Q U E R I E S */
 
 @media only screen and (max-width: 68.75em) {

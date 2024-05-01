@@ -10,7 +10,7 @@ const CONFIG = {
 	// ├┴┐├─┤└─┐││  └─┐
 	// └─┘┴ ┴└─┘┴└─┘└─┘
 
-	assetPrefix: "",
+	assetPrefix: "../",
 
 	// General
 	name: 'cyn',
@@ -30,12 +30,12 @@ const CONFIG = {
 	// Weather
 	weatherKey: 'InsertYourAPIKeyHere123456', // Write here your API Key
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
-	weatherUnit: 'C', // 'F', 'C'
+	weatherUnit: 'F', // 'F', 'C'
 	language: 'en', // More languages in https://openweathermap.org/current#multi
 
 	trackLocation: true, // If false or an error occurs, the app will use the lat/lon below
-	defaultLatitude: '37.775',
-	defaultLongitude: '-122.419',
+	defaultLatitude: '40.034',
+	defaultLongitude: '-83.139',
 
 	// Autochange
 	autoChangeTheme: true,
@@ -55,39 +55,39 @@ const CONFIG = {
 	firstButtonsContainer: [
 		{
 			id: '1',
-			name: 'Github',
-			icon: 'github',
+			name: 'Gitlab',
+			icon: 'gitlab',
 			link: 'https://github.com/',
 		},
 		{
 			id: '2',
 			name: 'Mail',
 			icon: 'mail',
-			link: 'https://mail.protonmail.com/',
+			link: 'https://outlook.office.com/mail/',
 		},
 		{
 			id: '3',
-			name: 'Todoist',
-			icon: 'trello',
-			link: 'https://todoist.com',
+			name: 'Calendar',
+			icon: 'calendar',
+			link: 'https://outlook.office.com/calendar/view/month',
 		},
 		{
 			id: '4',
-			name: 'Calendar',
-			icon: 'calendar',
-			link: 'https://calendar.google.com/calendar/r',
+			name: 'Music',
+			icon: 'headphones',
+			link: 'https://open.spotify.com',
 		},
 		{
 			id: '5',
-			name: 'Reddit',
-			icon: 'glasses',
-			link: 'https://reddit.com',
+			name: 'Tasks',
+			icon: 'trello',
+			link: 'https://to-do.office.com/tasks/today',
 		},
 		{
 			id: '6',
-			name: 'Odysee',
-			icon: 'youtube',
-			link: 'https://odysee.com/',
+			name: 'Figma',
+			icon: 'figma',
+			link: 'https://figma.com/',
 		},
 	],
 
@@ -141,20 +141,20 @@ const CONFIG = {
 			id: '1',
 			links: [
 				{
-					name: 'Inspirational',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+					name: 'On Repeat',
+					link: 'https://open.spotify.com/playlist/37i9dQZF1EpiOv7UlZWjku?si=c94daa7484c94751',
 				},
 				{
-					name: 'Classic',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+					name: 'Liked Songs',
+					link: 'https://open.spotify.com/collection/tracks',
 				},
 				{
-					name: 'Oldies',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+					name: 'Lavender Lovers',
+					link: 'https://open.spotify.com/playlist/37i9dQZF1EJsRqkr8JpUxI',
 				},
 				{
-					name: 'Rock',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+					name: 'Discover Weekly',
+					link: 'https://open.spotify.com/playlist/37i9dQZEVXcV9O5JoyKTXw?si=e53f1ca47cc7439d',
 				},
 			],
 		},
@@ -167,16 +167,16 @@ const CONFIG = {
 					link: 'https://www.linkedin.com',
 				},
 				{
-					name: 'Dribbble',
-					link: 'https://www.dribbble.com',
+					name: 'Reportal',
+					link: 'https://reportal.corp.ohiosemi.com/reports.aspx',
 				},
 				{
-					name: 'Trello',
-					link: 'https://www.trello.com',
+					name: 'PII Protect',
+					link: 'https://portal.pii-protect.com/',
 				},
 				{
-					name: 'Slack',
-					link: 'https://www.slack.com',
+					name: 'Learn',
+					link: 'http://learn.ohiosemi.com/login/index.php',
 				},
 			],
 		},
