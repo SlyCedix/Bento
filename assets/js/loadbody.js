@@ -34,16 +34,19 @@ async function loadBody() {
 
 
 	await loadScript("https://unpkg.com/lucide@latest");
+	await loadScript(`${CONFIG.assetsPath}/js/layout.js`);
 
-    await loadScript(`${CONFIG.assetsPath}/js/layout.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/theme.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/time.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/greeting.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/weather.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/searchbox.js`);
-    
-    await loadScript(`${CONFIG.assetsPath}/js/buttons.js`);
-    await loadScript(`${CONFIG.assetsPath}/js/lists.js`);
+	await Promise.all([
+		loadScript(`${CONFIG.assetsPath}/js/weather.js`),
+
+		loadScript(`${CONFIG.assetsPath}/js/theme.js`),
+		loadScript(`${CONFIG.assetsPath}/js/time.js`),
+		loadScript(`${CONFIG.assetsPath}/js/greeting.js`),
+		loadScript(`${CONFIG.assetsPath}/js/searchbox.js`),
+
+		loadScript(`${CONFIG.assetsPath}/js/buttons.js`),
+		loadScript(`${CONFIG.assetsPath}/js/lists.js`),		
+	])
 
     lucide.createIcons();
 }
