@@ -5,7 +5,6 @@
 
 const iconElement = document.querySelector('.weatherIcon');
 const tempElement = document.querySelector('.weatherValue p');
-const descElement = document.querySelector('.weatherDescription p');
 
 const weather = {};
 weather.temperature = {
@@ -76,7 +75,6 @@ function getWeather(latitude, longitude) {
 			let fahrenheit = period.temperature;
 
 			weather.temperature.value = tempUnit == 'C' ? (fahrenheit - 32) * 5 / 9 : fahrenheit;
-			weather.description = period.shortForecast
 			
 			let iconSplit = String(period.icon).replace("https://api.weather.gov/icons/land/", "").split('/')
 			let dayNight = iconSplit[0] == "day" ? "d" : "n"
@@ -88,7 +86,6 @@ function getWeather(latitude, longitude) {
 }
 
 function displayWeather() {
-	iconElement.innerHTML = `<img src="${CONFIG.assetPrefix}assets/icons/${CONFIG.weatherIcons}/${weather.iconId}.png"/>`;
+	iconElement.innerHTML = `<img src="${CONFIG.assetsPath}/icons/${CONFIG.weatherIcons}/${weather.iconId}.png"/>`;
 	tempElement.innerHTML = `${weather.temperature.value.toFixed(0)}°<span class="darkfg">${tempUnit}</span>`;
-	descElement.innerHTML = weather.description;
 }
