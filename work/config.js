@@ -57,7 +57,7 @@ const CONFIG = {
 			id: '1',
 			name: 'Gitlab',
 			icon: 'gitlab',
-			link: 'https://github.com/',
+			link: 'https://gitlab.corp.ohiosemi.com/',
 		},
 		{
 			id: '2',
