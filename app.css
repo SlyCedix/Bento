@@ -17,11 +17,10 @@
   --fg-secondary: 3vh;
   /* Greetings and Weather widger */
   --fg-date: 2vh;
-  --fg-icon: 4vh;
   /* Date */
   --fg-list: 2vh;
   /* Links List */
-  --icon: 3vh;
+  --icon: 4vh;
   /* Icon Size */
 
   /* Fonts Color */
@@ -107,11 +106,13 @@ body {
   border: none;
   cursor: pointer;
   background-color: #00000000;
+  width: var(--icon);
+  height: var(--icon);
 }
 
-#themeIcon {
-  width: 25px;
-  height: 25px;
+#themeButton_icon {
+  width: var(--icon);
+  height: var(--icon);
 }
 
 .container {
@@ -188,7 +189,8 @@ body {
 }
 
 #day {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 #greetings {
@@ -197,16 +199,14 @@ body {
 }
 
 .weatherIcon img {
-  margin-left: 1.0rem;
-  width: var(--fg-icon);
-  height: var(--fg-icon);
+  width: var(--icon);
+  height: var(--icon);
   display: block;
 }
 
 .weatherValue p {
   font-size: var(--fg-date);
   font-weight: bolder;
-  margin-left: 0.5rem;
   color: var(--fg);
 }
 
